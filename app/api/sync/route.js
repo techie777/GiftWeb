@@ -149,20 +149,11 @@ export async function GET(request) {
       return NextResponse.json({ upToDate: true, version: state.version });
     }
 
-    // Security Hardening: Sanitize sensitive PINs before sending over the wire
-    const sanitizedData = { ...state };
-    if (Array.isArray(sanitizedData.admins)) {
-      sanitizedData.admins = sanitizedData.admins.map(({ pin, ...rest }) => rest);
-    }
-    if (Array.isArray(sanitizedData.vendors)) {
-      sanitizedData.vendors = sanitizedData.vendors.map(({ pin, ...rest }) => rest);
-    }
-
     return NextResponse.json({
       upToDate: false,
       version: state.version,
       lastUpdated: state.lastUpdated,
-      data: sanitizedData
+      data: state
     });
   } catch (err) {
     console.error('GET /api/sync error:', err);
@@ -362,16 +353,21 @@ export async function POST(request) {
       }
 
       case 'mark_ready_for_pickup': {
-        const { orderId } = payload;
+        const { orderId, mode } = payload;
         const targetOrder = state.orders.find(o => String(o.id) === String(orderId));
         if (targetOrder) {
+          const isAdminPickup = mode === 'admin_pickup';
           targetOrder.stage = 'ready_for_pickup';
           targetOrder.status = 'Ready for Pickup';
-          targetOrder.statusMessage = 'Order packed and ready for pickup at vendor location';
+          targetOrder.shipmentArrangedBy = isAdminPickup ? 'admin' : 'vendor_self';
+          targetOrder.adminPickupRequested = isAdminPickup;
+          targetOrder.statusMessage = isAdminPickup
+            ? 'Ready for Pickup. Admin delivery requested (Fixed charge: ₹60).'
+            : 'Order packed and ready for delivery dispatch at vendor location';
           targetOrder.readyAt = new Date().toISOString();
-          addNotification('admin', `Order #${orderId} is Ready for Pickup at ${targetOrder.assignedVendorName || 'Vendor'}`);
+          addNotification('admin', `Order #${orderId} is Ready for Pickup at ${targetOrder.assignedVendorName || 'Vendor'}${isAdminPickup ? ' (Admin Delivery Requested)' : ''}`);
           if (targetOrder.customerUsername) {
-            addNotification(targetOrder.customerUsername, `Your Order #${orderId} is packed and ready for delivery pickup!`);
+            addNotification(targetOrder.customerUsername, `Your Order #${orderId} is packed and ready for delivery!`);
           }
         }
         break;
@@ -467,22 +463,59 @@ export async function POST(request) {
         break;
       }
 
+      case 'assign_delivery_executive': {
+        const { orderId, executivePayload } = payload;
+        const targetOrder = state.orders.find(o => String(o.id) === String(orderId));
+        if (targetOrder) {
+          const cleanPickup = String(executivePayload?.pickupOtp || '').trim() || targetOrder.pickupOtp || '4844';
+          const cleanDrop = String(executivePayload?.dropOtp || '').trim() || targetOrder.dropOtp || targetOrder.deliveryOtp || '2230';
+          const provider = executivePayload?.provider || 'Jr Admin (Indore Hub)';
+          const driverName = executivePayload?.driverName || 'Jr Admin Rahul (Indore Hub)';
+          const driverMobile = executivePayload?.driverMobile || '+91 98260 11223';
+          const nowIso = new Date().toISOString();
+
+          targetOrder.pickupOtp = cleanPickup;
+          targetOrder.dropOtp = cleanDrop;
+          targetOrder.deliveryOtp = cleanDrop;
+          targetOrder.deliveryExecutiveAssigned = true;
+          targetOrder.logistics = {
+            ...(targetOrder.logistics || {}),
+            type: 'master_admin_delivery',
+            provider: provider,
+            driverName: driverName,
+            driverMobile: driverMobile,
+            pickupOtp: cleanPickup,
+            dropOtp: cleanDrop,
+            assignedBy: 'master_admin',
+            assignedAt: nowIso,
+            updatedAt: nowIso
+          };
+          targetOrder.statusMessage = `Delivery Executive ${driverName} (${provider}) assigned by Master Admin. Reaching shop counter for parcel pickup.`;
+          addNotification('admin', `Delivery executive ${driverName} (${provider}) assigned to Order #${orderId}`);
+          if (targetOrder.assignedVendorId) {
+            addNotification(`vendor_${targetOrder.assignedVendorId}`, `Master Admin assigned delivery executive ${driverName} (${provider}) for Order #${orderId}. Please keep parcel ready.`);
+          }
+        }
+        break;
+      }
+
       case 'verify_pickup': {
-        const { orderId, enteredOtp, logisticsPayload } = payload;
+        const { orderId, enteredOtp, logisticsPayload, bypass } = payload;
         const targetOrder = state.orders.find(o => String(o.id) === String(orderId));
         if (!targetOrder) return NextResponse.json({ success: false, message: 'Order not found' }, { status: 404 });
 
         const cleanEntered = String(enteredOtp || '').trim();
         const cleanExpected = String(targetOrder.pickupOtp || '').trim();
-        if (cleanEntered !== cleanExpected) {
+        if (!bypass && cleanEntered !== cleanExpected) {
           return NextResponse.json({ success: false, message: `Invalid Pickup OTP "${cleanEntered}". Expected: ${cleanExpected}` });
         }
 
         targetOrder.stage = 'out_for_delivery';
         targetOrder.status = 'In Transit';
-        targetOrder.statusMessage = `Parcel collected from vendor via verified Pickup OTP. In transit with ${logisticsPayload?.provider || 'Express Logistics'}`;
+        targetOrder.statusMessage = `Parcel collected from vendor counter via verified Pickup OTP. Out for delivery with ${logisticsPayload?.provider || 'Express Logistics'}`;
         targetOrder.pickupVerified = true;
         targetOrder.pickedUpAt = new Date().toISOString();
+        targetOrder.dispatchedAt = targetOrder.dispatchedAt || new Date().toISOString();
         targetOrder.logistics = {
           ...(targetOrder.logistics || {}),
           ...(logisticsPayload || {}),
@@ -505,7 +538,7 @@ export async function POST(request) {
         if (!targetOrder) return NextResponse.json({ success: false, message: 'Order not found' }, { status: 404 });
 
         const cleanEntered = String(enteredOtp || '').trim();
-        const cleanExpected = String(targetOrder.deliveryOtp || '').trim();
+        const cleanExpected = String(targetOrder.dropOtp || targetOrder.deliveryOtp || '').trim();
         if (!bypass && cleanEntered !== cleanExpected) {
           return NextResponse.json({ success: false, message: `Invalid Delivery OTP "${cleanEntered}". Customer must provide: ${cleanExpected}` });
         }
@@ -552,6 +585,9 @@ export async function POST(request) {
         if (targetOrder) {
           targetOrder.feedback = feedback;
           addNotification('admin', `Customer rated Order #${orderId}: ${feedback.rating} Stars`);
+          if (targetOrder.assignedVendorId) {
+            addNotification(`vendor_${targetOrder.assignedVendorId}`, `Customer gave ${feedback.rating} Stars for Order #${orderId}`);
+          }
         }
         break;
       }

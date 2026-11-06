@@ -12112,191 +12112,341 @@
       ]
     }
   ],
-  "lastUpdated": "2026-10-29T13:40:52.898Z",
+  "lastUpdated": "2026-11-06T12:54:44.437Z",
   "notifications": {
     "admin": [
       {
-        "id": 1793280123200,
-        "text": "MongoDB Atlas Live Sync Connected Successfully!",
-        "timestamp": "2026-10-29T13:22:03.129Z",
+        "id": 1793963281071,
+        "text": "Order #7443 dispatched via Jr Admin (Indore Hub) (Jr Admin Rahul (Indore Hub)).",
+        "timestamp": "2026-11-06T11:08:01.040Z",
         "read": false
       },
       {
-        "id": 1793276312748,
-        "text": "New vendor registered: \"ABC GiftMart\" (Rahul Jain) for approval.",
-        "timestamp": "2026-10-29T12:18:32.726Z",
+        "id": 1793963280604,
+        "text": "Order #7443 dispatched via Jr Admin (Indore Hub) (Jr Admin Rahul (Indore Hub)). Status is now In Transit.",
+        "timestamp": "2026-11-06T11:08:00.583Z",
         "read": false
       },
       {
-        "id": 1793276312534,
-        "text": "🆕 NEW VENDOR REGISTRATION: \"ABC GiftMart\" (Rahul Jain) applied to sell [Model: BOTH]. Action required in Approvals Desk.",
-        "timestamp": "2026-10-29T12:18:32.452Z",
+        "id": 1793963240251,
+        "text": "Order #7443 is Ready for Pickup at Blossom Florals & Botanic Boutique (Admin Delivery Requested)",
+        "timestamp": "2026-11-06T11:07:20.201Z",
         "read": false
       },
       {
-        "id": 1793276006714,
-        "text": "B2B Wholesale Order #B2B-1001 placed: Velvet Bakery -> Blossom Florals & Botanicals (₹11000)",
-        "timestamp": "2026-10-29T12:13:26.691Z",
-        "read": false
-      },
-      {
-        "id": 1793276006454,
-        "text": "New vendor registered: \"Anjali Floral Art\" (Anjali Verma) for approval.",
-        "timestamp": "2026-10-29T12:13:26.413Z",
-        "read": false
-      },
-      {
-        "id": 1789284269090,
-        "text": "Order #9901 is Ready for Pickup at Blossom Florals & Botanic Boutique",
-        "timestamp": "2026-09-13T07:24:29.075Z",
-        "read": false
-      },
-      {
-        "id": 1789284268026,
-        "text": "Order #9901 marked Ready for Pickup by \"Blossom Florals & Botanic Boutique\" (Vendor will arrange self-pickup)",
-        "timestamp": "2026-09-13T07:24:27.990Z",
-        "read": false
-      },
-      {
-        "id": 1789284212553,
-        "text": "Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-13T07:23:32.521Z",
-        "read": false
-      },
-      {
-        "id": 1789284211770,
-        "text": "Order 9901: Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-13T07:23:31.725Z",
-        "read": false
-      },
-      {
-        "id": 1789284211265,
-        "text": "Assignment updated for 9901",
-        "timestamp": "2026-09-13T07:23:31.209Z",
-        "read": false
-      },
-      {
-        "id": 1789284163609,
-        "text": "Order #9901 assigned to vendor Blossom Florals & Botanic Boutique",
-        "timestamp": "2026-09-13T07:22:43.551Z",
-        "read": false
-      },
-      {
-        "id": 1789284163403,
-        "text": "Order #9901 assigned to vendor Blossom Florals & Botanic Boutique",
-        "timestamp": "2026-09-13T07:22:43.365Z",
-        "read": false
-      },
-      {
-        "id": 1789284148084,
-        "text": "Order confirmed and scheduled for workshop preparation",
-        "timestamp": "2026-09-13T07:22:28.020Z",
-        "read": false
-      },
-      {
-        "id": 1789284147900,
-        "text": "Order #9901 moved to Confirmed",
-        "timestamp": "2026-09-13T07:22:27.821Z",
-        "read": false
-      },
-      {
-        "id": 1789284145526,
-        "text": "Order #9901 confirmed",
-        "timestamp": "2026-09-13T07:22:25.519Z",
-        "read": false
-      },
-      {
-        "id": 1789284145360,
-        "text": "Order #9901 confirmed",
-        "timestamp": "2026-09-13T07:22:25.304Z",
-        "read": false
-      },
-      {
-        "id": 1789284109328,
-        "text": "New Order #1062 [⚡ Indore Local] (Gift Booking) received",
-        "timestamp": "2026-09-13T07:21:49.322Z",
-        "read": true
-      },
-      {
-        "id": 1789284108532,
-        "text": "New Order #1062 (Gift Booking) received",
-        "timestamp": "2026-09-13T07:21:48.495Z",
-        "read": true
-      },
-      {
-        "id": 1789226020559,
-        "text": "Order #7443 is Ready for Pickup at Blossom Florals & Botanic Boutique",
-        "timestamp": "2026-09-12T15:13:40.494Z",
-        "read": true
-      },
-      {
-        "id": 1789226017087,
+        "id": 1793963240034,
         "text": "🔔 SHIPMENT READY FOR PICKUP: Order #7443 is ready for pickup from shop vendor \"Blossom Florals & Botanic Boutique\" (Shop 14, Apollo Premier, Vijay Nagar, Indore). Working Hours: 08:00 AM - 10:00 PM. Kindly arrange logistics collection.",
-        "timestamp": "2026-09-12T15:13:37.029Z",
-        "read": true
+        "timestamp": "2026-11-06T11:07:20.009Z",
+        "read": false
       },
       {
-        "id": 1789226006336,
-        "text": "Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-12T15:13:26.309Z",
-        "read": true
+        "id": 1793963218755,
+        "text": "Order #7443 is Ready for Pickup at Blossom Florals & Botanic Boutique",
+        "timestamp": "2026-11-06T11:06:58.741Z",
+        "read": false
       },
       {
-        "id": 1789226006073,
-        "text": "Order 7443: Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-12T15:13:26.009Z",
-        "read": true
+        "id": 1793963218541,
+        "text": "Order #7443 marked Ready for Pickup by \"Blossom Florals & Botanic Boutique\" (Vendor will arrange self-pickup)",
+        "timestamp": "2026-11-06T11:06:58.531Z",
+        "read": false
       },
       {
-        "id": 1789226005490,
+        "id": 1793960776628,
+        "text": "Order #7443 is Ready for Pickup at Blossom Florals & Botanic Boutique (Admin Delivery Requested)",
+        "timestamp": "2026-11-06T10:26:16.569Z",
+        "read": false
+      },
+      {
+        "id": 1793960776510,
+        "text": "🔔 SHIPMENT READY FOR PICKUP: Order #7443 is ready for pickup from shop vendor \"Blossom Florals & Botanic Boutique\" (Shop 14, Apollo Premier, Vijay Nagar, Indore). Working Hours: 08:00 AM - 10:00 PM. Kindly arrange logistics collection.",
+        "timestamp": "2026-11-06T10:26:16.445Z",
+        "read": false
+      },
+      {
+        "id": 1793960768285,
+        "text": "Order #7443 is Ready for Pickup at Blossom Florals & Botanic Boutique",
+        "timestamp": "2026-11-06T10:26:08.239Z",
+        "read": false
+      },
+      {
+        "id": 1793960768089,
+        "text": "Order #7443 marked Ready for Pickup by \"Blossom Florals & Botanic Boutique\" (Vendor will arrange self-pickup)",
+        "timestamp": "2026-11-06T10:26:08.076Z",
+        "read": false
+      },
+      {
+        "id": 1793960734007,
+        "text": "Order #7443 is Ready for Pickup at Blossom Florals & Botanic Boutique (Admin Delivery Requested)",
+        "timestamp": "2026-11-06T10:25:33.949Z",
+        "read": false
+      },
+      {
+        "id": 1793960733881,
+        "text": "🔔 SHIPMENT READY FOR PICKUP: Order #7443 is ready for pickup from shop vendor \"Blossom Florals & Botanic Boutique\" (Shop 14, Apollo Premier, Vijay Nagar, Indore). Working Hours: 08:00 AM - 10:00 PM. Kindly arrange logistics collection.",
+        "timestamp": "2026-11-06T10:25:33.789Z",
+        "read": false
+      },
+      {
+        "id": 1793960717005,
+        "text": "Master Admin accepted order #7443. Began item preparation.",
+        "timestamp": "2026-11-06T10:25:16.912Z",
+        "read": false
+      },
+      {
+        "id": 1793960716573,
+        "text": "Order 7443: Master Admin accepted order #7443. Began item preparation.",
+        "timestamp": "2026-11-06T10:25:16.522Z",
+        "read": false
+      },
+      {
+        "id": 1793960715936,
         "text": "Assignment updated for 7443",
-        "timestamp": "2026-09-12T15:13:25.439Z",
-        "read": true
+        "timestamp": "2026-11-06T10:25:15.927Z",
+        "read": false
       },
       {
-        "id": 1789225889948,
+        "id": 1793960696828,
         "text": "Order #7443 assigned to vendor Blossom Florals & Botanic Boutique",
-        "timestamp": "2026-09-12T15:11:29.855Z",
-        "read": true
+        "timestamp": "2026-11-06T10:24:56.785Z",
+        "read": false
       },
       {
-        "id": 1789225889635,
+        "id": 1793960696685,
         "text": "Order #7443 assigned to vendor Blossom Florals & Botanic Boutique",
-        "timestamp": "2026-09-12T15:11:29.542Z",
-        "read": true
+        "timestamp": "2026-11-06T10:24:56.628Z",
+        "read": false
       },
       {
-        "id": 1789225876291,
-        "text": "Order #7443 confirmed",
-        "timestamp": "2026-09-12T15:11:16.210Z",
-        "read": true
+        "id": 1793960418235,
+        "text": "Order #7443 assigned to vendor Velvet Patisserie & Truffles",
+        "timestamp": "2026-11-06T10:20:18.234Z",
+        "read": false
       },
       {
-        "id": 1789225875935,
-        "text": "Order #7443 confirmed",
-        "timestamp": "2026-09-12T15:11:15.895Z",
-        "read": true
+        "id": 1793960418070,
+        "text": "Order #7443 assigned to vendor Velvet Patisserie & Truffles",
+        "timestamp": "2026-11-06T10:20:18.020Z",
+        "read": false
       },
       {
-        "id": 1789225661885,
-        "text": "New Order #7443 [⚡ Indore Local] (Gift Booking) received",
-        "timestamp": "2026-09-12T15:07:41.791Z",
-        "read": true
+        "id": 1793960086154,
+        "text": "Order confirmed and scheduled for workshop preparation",
+        "timestamp": "2026-11-06T10:14:46.104Z",
+        "read": false
       },
       {
-        "id": 1789225661668,
-        "text": "New Order #7443 (Gift Booking) received",
-        "timestamp": "2026-09-12T15:07:41.660Z",
-        "read": true
+        "id": 1793960085973,
+        "text": "Order #7443 moved to Confirmed",
+        "timestamp": "2026-11-06T10:14:45.886Z",
+        "read": false
       },
       {
-        "id": 1789222785193,
-        "text": "Order #6226 is Ready for Pickup at Blossom Florals & Botanic Boutique",
-        "timestamp": "2026-09-12T14:19:45.106Z",
-        "read": true
+        "id": 1793959997254,
+        "text": "Order #7443 is Ready for Pickup at Blossom Florals & Botanic Boutique (Admin Delivery Requested)",
+        "timestamp": "2026-11-06T10:13:17.162Z",
+        "read": false
+      },
+      {
+        "id": 1793959997139,
+        "text": "🔔 SHIPMENT READY FOR PICKUP: Order #7443 is ready for pickup from shop vendor \"Blossom Florals & Botanic Boutique\" (Shop 14, Apollo Premier, Vijay Nagar, Indore). Working Hours: 08:00 AM - 10:00 PM. Kindly arrange logistics collection.",
+        "timestamp": "2026-11-06T10:13:17.054Z",
+        "read": false
+      },
+      {
+        "id": 1793959964234,
+        "text": "Order successfully delivered to recipient",
+        "timestamp": "2026-11-06T10:12:44.158Z",
+        "read": false
+      },
+      {
+        "id": 1793959964098,
+        "text": "Order #1062 moved to Delivered",
+        "timestamp": "2026-11-06T10:12:44.042Z",
+        "read": false
+      },
+      {
+        "id": 1793959962232,
+        "text": "Package dispatched with delivery executive and on its way",
+        "timestamp": "2026-11-06T10:12:42.204Z",
+        "read": false
+      },
+      {
+        "id": 1793959962111,
+        "text": "Order #1062 moved to Dispatched",
+        "timestamp": "2026-11-06T10:12:42.085Z",
+        "read": false
+      },
+      {
+        "id": 1793959959793,
+        "text": "Package dispatched with delivery executive and on its way",
+        "timestamp": "2026-11-06T10:12:39.694Z",
+        "read": false
+      },
+      {
+        "id": 1793959959582,
+        "text": "Order #1062 moved to Dispatched",
+        "timestamp": "2026-11-06T10:12:39.580Z",
+        "read": false
+      },
+      {
+        "id": 1793959958996,
+        "text": "Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
+        "timestamp": "2026-11-06T10:12:38.903Z",
+        "read": false
       }
     ],
     "vendor_vendor-flowers": [
+      {
+        "id": 1793963280825,
+        "text": "Package handed over to Jr Admin (Indore Hub) rider (Jr Admin Rahul (Indore Hub)). Order #7443 is now In Transit.",
+        "timestamp": "2026-11-06T11:08:00.801Z",
+        "read": false
+      },
+      {
+        "id": 1793963240151,
+        "text": "Shipment pickup request sent to Admin for Order #7443. Admin will arrange driver collection from your shop (Shop 14, Apollo Premier, Vijay Nagar, Indore) during working hours (08:00 AM - 10:00 PM).",
+        "timestamp": "2026-11-06T11:07:20.077Z",
+        "read": false
+      },
+      {
+        "id": 1793963218679,
+        "text": "Order #7443 marked Ready for Pickup. You can now arrange self-dispatch with Pickup & Drop OTPs.",
+        "timestamp": "2026-11-06T11:06:58.608Z",
+        "read": false
+      },
+      {
+        "id": 1793960776549,
+        "text": "Shipment pickup request sent to Admin for Order #7443. Admin will arrange driver collection from your shop (Shop 14, Apollo Premier, Vijay Nagar, Indore) during working hours (08:00 AM - 10:00 PM).",
+        "timestamp": "2026-11-06T10:26:16.504Z",
+        "read": false
+      },
+      {
+        "id": 1793960768193,
+        "text": "Order #7443 marked Ready for Pickup. You can now arrange self-dispatch with Pickup & Drop OTPs.",
+        "timestamp": "2026-11-06T10:26:08.159Z",
+        "read": false
+      },
+      {
+        "id": 1793960733909,
+        "text": "Shipment pickup request sent to Admin for Order #7443. Admin will arrange driver collection from your shop (Shop 14, Apollo Premier, Vijay Nagar, Indore) during working hours (08:00 AM - 10:00 PM).",
+        "timestamp": "2026-11-06T10:25:33.851Z",
+        "read": false
+      },
+      {
+        "id": 1793960716938,
+        "text": "Master Admin accepted order #7443. Began item preparation.",
+        "timestamp": "2026-11-06T10:25:16.912Z",
+        "read": false
+      },
+      {
+        "id": 1793960716726,
+        "text": "Order 7443 updated: Accepted",
+        "timestamp": "2026-11-06T10:25:16.706Z",
+        "read": false
+      },
+      {
+        "id": 1793960696826,
+        "text": "Order #7443 assigned to your shop for preparation",
+        "timestamp": "2026-11-06T10:24:56.785Z",
+        "read": false
+      },
+      {
+        "id": 1793960696546,
+        "text": "New Order #7443 assigned to you",
+        "timestamp": "2026-11-06T10:24:56.516Z",
+        "read": false
+      },
+      {
+        "id": 1793960086164,
+        "text": "Order confirmed and scheduled for workshop preparation",
+        "timestamp": "2026-11-06T10:14:46.104Z",
+        "read": false
+      },
+      {
+        "id": 1793960086089,
+        "text": "Order #7443 status: Confirmed",
+        "timestamp": "2026-11-06T10:14:46.032Z",
+        "read": false
+      },
+      {
+        "id": 1793959997178,
+        "text": "Shipment pickup request sent to Admin for Order #7443. Admin will arrange driver collection from your shop (Shop 14, Apollo Premier, Vijay Nagar, Indore) during working hours (08:00 AM - 10:00 PM).",
+        "timestamp": "2026-11-06T10:13:17.106Z",
+        "read": false
+      },
+      {
+        "id": 1793954459232,
+        "text": "Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
+        "timestamp": "2026-11-06T08:40:59.153Z",
+        "read": false
+      },
+      {
+        "id": 1793954459145,
+        "text": "Order #5578 status: Packed",
+        "timestamp": "2026-11-06T08:40:59.061Z",
+        "read": false
+      },
+      {
+        "id": 1793954457950,
+        "text": "Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
+        "timestamp": "2026-11-06T08:40:57.928Z",
+        "read": false
+      },
+      {
+        "id": 1793954457923,
+        "text": "Order #6492 status: Packed",
+        "timestamp": "2026-11-06T08:40:57.847Z",
+        "read": false
+      },
+      {
+        "id": 1793954455797,
+        "text": "Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
+        "timestamp": "2026-11-06T08:40:55.725Z",
+        "read": false
+      },
+      {
+        "id": 1793954455709,
+        "text": "Order #7371 status: Packed",
+        "timestamp": "2026-11-06T08:40:55.629Z",
+        "read": false
+      },
+      {
+        "id": 1793954453237,
+        "text": "Order confirmed and scheduled for workshop preparation",
+        "timestamp": "2026-11-06T08:40:53.176Z",
+        "read": false
+      },
+      {
+        "id": 1793954453115,
+        "text": "Order #5578 status: Confirmed",
+        "timestamp": "2026-11-06T08:40:53.097Z",
+        "read": false
+      },
+      {
+        "id": 1793954439518,
+        "text": "Order confirmed and scheduled for workshop preparation",
+        "timestamp": "2026-11-06T08:40:39.503Z",
+        "read": false
+      },
+      {
+        "id": 1793954439505,
+        "text": "Order #6492 status: Confirmed",
+        "timestamp": "2026-11-06T08:40:39.410Z",
+        "read": false
+      },
+      {
+        "id": 1793954434946,
+        "text": "Order confirmed and scheduled for workshop preparation",
+        "timestamp": "2026-11-06T08:40:34.931Z",
+        "read": false
+      },
+      {
+        "id": 1793954434866,
+        "text": "Order #7371 status: Confirmed",
+        "timestamp": "2026-11-06T08:40:34.841Z",
+        "read": false
+      },
       {
         "id": 1789284268523,
         "text": "Order #9901 marked Ready for Pickup. You can now arrange self-dispatch with Pickup & Drop OTPs.",
@@ -12326,337 +12476,187 @@
         "text": "New Order #9901 assigned to you",
         "timestamp": "2026-09-13T07:22:43.187Z",
         "read": false
-      },
-      {
-        "id": 1789226019086,
-        "text": "Shipment pickup request sent to Admin for Order #7443. Admin will arrange driver collection from your shop (Shop 14, Apollo Premier, Vijay Nagar, Indore) during working hours (08:00 AM - 10:00 PM).",
-        "timestamp": "2026-09-12T15:13:39.007Z",
-        "read": false
-      },
-      {
-        "id": 1789226006386,
-        "text": "Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-12T15:13:26.309Z",
-        "read": false
-      },
-      {
-        "id": 1789226006230,
-        "text": "Order 7443 updated: Accepted",
-        "timestamp": "2026-09-12T15:13:26.143Z",
-        "read": false
-      },
-      {
-        "id": 1789225889908,
-        "text": "Order #7443 assigned to your shop for preparation",
-        "timestamp": "2026-09-12T15:11:29.855Z",
-        "read": false
-      },
-      {
-        "id": 1789225889294,
-        "text": "New Order #7443 assigned to you",
-        "timestamp": "2026-09-12T15:11:29.276Z",
-        "read": false
-      },
-      {
-        "id": 1789222784497,
-        "text": "Shipment pickup request sent to Admin for Order #6226. Admin will arrange driver collection from your shop (Shop 14, Apollo Premier, Vijay Nagar, Indore) during working hours (08:00 AM - 10:00 PM).",
-        "timestamp": "2026-09-12T14:19:44.485Z",
-        "read": false
-      },
-      {
-        "id": 1789222671867,
-        "text": "Order #6226 assigned to your shop for preparation",
-        "timestamp": "2026-09-12T14:17:51.804Z",
-        "read": false
-      },
-      {
-        "id": 1789222671435,
-        "text": "New Order #6226 assigned to you",
-        "timestamp": "2026-09-12T14:17:51.399Z",
-        "read": false
-      },
-      {
-        "id": 1789210677602,
-        "text": "Order #4874 marked Ready for Pickup. You can now arrange self-dispatch with Pickup & Drop OTPs.",
-        "timestamp": "2026-09-12T10:57:57.596Z",
-        "read": false
-      },
-      {
-        "id": 1789210653932,
-        "text": "Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-12T10:57:33.883Z",
-        "read": false
-      },
-      {
-        "id": 1789210653868,
-        "text": "Order 4874 updated: Accepted",
-        "timestamp": "2026-09-12T10:57:33.774Z",
-        "read": false
-      },
-      {
-        "id": 1789210608433,
-        "text": "Order confirmed and scheduled for workshop preparation",
-        "timestamp": "2026-09-12T10:56:48.338Z",
-        "read": false
-      },
-      {
-        "id": 1789210607652,
-        "text": "Order #4874 status: Confirmed",
-        "timestamp": "2026-09-12T10:56:47.573Z",
-        "read": false
-      },
-      {
-        "id": 1789210499592,
-        "text": "Order #4874 assigned to your shop for preparation",
-        "timestamp": "2026-09-12T10:54:59.520Z",
-        "read": false
-      },
-      {
-        "id": 1789210498561,
-        "text": "New Order #4874 assigned to you",
-        "timestamp": "2026-09-12T10:54:58.484Z",
-        "read": false
-      },
-      {
-        "id": 1789207641243,
-        "text": "Self-pickup scheduled for Order #8146: Counter Pickup OTP is 9323. Hand over package to delivery executive after checking Pickup OTP.",
-        "timestamp": "2026-09-12T10:07:21.183Z",
-        "read": false
-      },
-      {
-        "id": 1789207607184,
-        "text": "Self-pickup scheduled for Order #8146: Counter Pickup OTP is 9323. Hand over package to delivery executive after checking Pickup OTP.",
-        "timestamp": "2026-09-12T10:06:47.106Z",
-        "read": false
-      },
-      {
-        "id": 1789207393104,
-        "text": "Order #8146 marked Ready for Pickup. You can now arrange self-dispatch with Pickup & Drop OTPs.",
-        "timestamp": "2026-09-12T10:03:13.044Z",
-        "read": false
-      },
-      {
-        "id": 1789207379996,
-        "text": "Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-12T10:02:59.963Z",
-        "read": false
-      },
-      {
-        "id": 1789207379613,
-        "text": "Order 8146 updated: Accepted",
-        "timestamp": "2026-09-12T10:02:59.516Z",
-        "read": false
-      },
-      {
-        "id": 1789207363235,
-        "text": "Order #8146 assigned to your shop for preparation",
-        "timestamp": "2026-09-12T10:02:43.214Z",
-        "read": false
-      },
-      {
-        "id": 1789207362135,
-        "text": "New Order #8146 assigned to you",
-        "timestamp": "2026-09-12T10:02:42.067Z",
-        "read": false
-      },
-      {
-        "id": 1789202621749,
-        "text": "Package dispatched with delivery executive and on its way",
-        "timestamp": "2026-09-12T08:43:41.741Z",
-        "read": false
-      },
-      {
-        "id": 1789202620782,
-        "text": "Order #9812 status: Dispatched",
-        "timestamp": "2026-09-12T08:43:40.743Z",
-        "read": false
-      },
-      {
-        "id": 1789202550100,
-        "text": "Shipment pickup request sent to Admin for Order #9812. Admin will arrange driver collection from your shop (Shop 14, Apollo Premier, Vijay Nagar, Indore) during working hours (08:00 AM - 10:00 PM).",
-        "timestamp": "2026-09-12T08:42:30.092Z",
-        "read": false
       }
     ],
     "rocky": [
       {
-        "id": 1789226020579,
-        "text": "Your Order #7443 is packed and ready for delivery pickup!",
-        "timestamp": "2026-09-12T15:13:40.494Z",
+        "id": 1793963281092,
+        "text": "🛵 Order #7443 is out for delivery with Jr Admin (Indore Hub)! Share your Drop OTP (2230) at doorstep.",
+        "timestamp": "2026-11-06T11:08:01.040Z",
         "read": false
       },
       {
-        "id": 1789226006369,
-        "text": "Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-12T15:13:26.309Z",
+        "id": 1793963280555,
+        "text": "🛵 Order #7443 is out for delivery with Jr Admin (Indore Hub) (Jr Admin Rahul (Indore Hub))! Share your Drop OTP (2230) at doorstep for delivery.",
+        "timestamp": "2026-11-06T11:08:00.513Z",
         "read": false
       },
       {
-        "id": 1789226005828,
-        "text": "Order 7443: Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-12T15:13:25.828Z",
+        "id": 1793963240226,
+        "text": "Your Order #7443 is packed and ready for delivery!",
+        "timestamp": "2026-11-06T11:07:20.201Z",
         "read": false
       },
       {
-        "id": 1789222785114,
-        "text": "Your Order #6226 is packed and ready for delivery pickup!",
-        "timestamp": "2026-09-12T14:19:45.106Z",
+        "id": 1793963218747,
+        "text": "Your Order #7443 is packed and ready for delivery!",
+        "timestamp": "2026-11-06T11:06:58.741Z",
         "read": false
       },
       {
-        "id": 1789210681685,
-        "text": "Your Order #4874 is packed and ready for delivery pickup!",
-        "timestamp": "2026-09-12T10:58:01.621Z",
+        "id": 1793960776595,
+        "text": "Your Order #7443 is packed and ready for delivery!",
+        "timestamp": "2026-11-06T10:26:16.569Z",
         "read": false
       },
       {
-        "id": 1789210653948,
-        "text": "Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-12T10:57:33.883Z",
+        "id": 1793960768248,
+        "text": "Your Order #7443 is packed and ready for delivery!",
+        "timestamp": "2026-11-06T10:26:08.239Z",
         "read": false
       },
       {
-        "id": 1789210653621,
-        "text": "Order 4874: Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-12T10:57:33.528Z",
+        "id": 1793960734013,
+        "text": "Your Order #7443 is packed and ready for delivery!",
+        "timestamp": "2026-11-06T10:25:33.949Z",
         "read": false
       },
       {
-        "id": 1789210608381,
+        "id": 1793960716919,
+        "text": "Master Admin accepted order #7443. Began item preparation.",
+        "timestamp": "2026-11-06T10:25:16.912Z",
+        "read": false
+      },
+      {
+        "id": 1793960716265,
+        "text": "Order 7443: Master Admin accepted order #7443. Began item preparation.",
+        "timestamp": "2026-11-06T10:25:16.217Z",
+        "read": false
+      },
+      {
+        "id": 1793960086196,
         "text": "Order confirmed and scheduled for workshop preparation",
-        "timestamp": "2026-09-12T10:56:48.338Z",
+        "timestamp": "2026-11-06T10:14:46.104Z",
         "read": false
       },
       {
-        "id": 1789210606772,
-        "text": "Update on Order #4874: Confirmed. Order confirmed and scheduled for workshop preparation",
-        "timestamp": "2026-09-12T10:56:46.756Z",
+        "id": 1793960086026,
+        "text": "Update on Order #7443: Confirmed. Order confirmed and scheduled for workshop preparation",
+        "timestamp": "2026-11-06T10:14:45.952Z",
         "read": false
       },
       {
-        "id": 1789208346820,
-        "text": "🛵 Order #8146 is out for delivery with Rapido! Share your Drop OTP (4468) at doorstep.",
-        "timestamp": "2026-09-12T10:19:06.806Z",
+        "id": 1793959997223,
+        "text": "Your Order #7443 is packed and ready for delivery!",
+        "timestamp": "2026-11-06T10:13:17.162Z",
         "read": false
       },
       {
-        "id": 1789207640892,
-        "text": "🔔 Delivery Drop OTP for Order #8146 is 4468. Please share this OTP with your Rapido delivery executive upon doorstep arrival.",
-        "timestamp": "2026-09-12T10:07:20.793Z",
+        "id": 1793959964211,
+        "text": "Order successfully delivered to recipient",
+        "timestamp": "2026-11-06T10:12:44.158Z",
         "read": false
       },
       {
-        "id": 1789207606623,
-        "text": "🔔 Delivery Drop OTP for Order #8146 is 4468. Please share this OTP with your Rapido delivery executive upon doorstep arrival.",
-        "timestamp": "2026-09-12T10:06:46.528Z",
+        "id": 1793959964152,
+        "text": "Update on Order #1062: Delivered. Order successfully delivered to recipient",
+        "timestamp": "2026-11-06T10:12:44.098Z",
         "read": false
       },
       {
-        "id": 1789207395448,
-        "text": "Your Order #8146 is packed and ready for delivery pickup!",
-        "timestamp": "2026-09-12T10:03:15.386Z",
-        "read": false
-      },
-      {
-        "id": 1789207379968,
-        "text": "Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-12T10:02:59.963Z",
-        "read": false
-      },
-      {
-        "id": 1789207378756,
-        "text": "Order 8146: Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-12T10:02:58.729Z",
-        "read": false
-      },
-      {
-        "id": 1789207278160,
-        "text": "Master Admin accepted order #8146. Began item preparation.",
-        "timestamp": "2026-09-12T10:01:18.117Z",
-        "read": false
-      },
-      {
-        "id": 1789207277520,
-        "text": "Order 8146: Master Admin accepted order #8146. Began item preparation.",
-        "timestamp": "2026-09-12T10:01:17.480Z",
-        "read": false
-      },
-      {
-        "id": 1789202621829,
+        "id": 1793959962247,
         "text": "Package dispatched with delivery executive and on its way",
-        "timestamp": "2026-09-12T08:43:41.741Z",
+        "timestamp": "2026-11-06T10:12:42.204Z",
         "read": false
       },
       {
-        "id": 1789202620027,
-        "text": "Update on Order #9812: Dispatched. Package dispatched with delivery executive and on its way",
-        "timestamp": "2026-09-12T08:43:39.941Z",
+        "id": 1793959962180,
+        "text": "Update on Order #1062: Dispatched. Package dispatched with delivery executive and on its way",
+        "timestamp": "2026-11-06T10:12:42.132Z",
         "read": false
       },
       {
-        "id": 1789202550757,
-        "text": "Your Order #9812 is packed and ready for delivery pickup!",
-        "timestamp": "2026-09-12T08:42:30.659Z",
+        "id": 1793959959776,
+        "text": "Package dispatched with delivery executive and on its way",
+        "timestamp": "2026-11-06T10:12:39.694Z",
         "read": false
       },
       {
-        "id": 1789202500514,
-        "text": "Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-12T08:41:40.431Z",
+        "id": 1793959959696,
+        "text": "Update on Order #1062: Dispatched. Package dispatched with delivery executive and on its way",
+        "timestamp": "2026-11-06T10:12:39.631Z",
         "read": false
       },
       {
-        "id": 1789202498339,
-        "text": "Order 9812: Vendor Anjali Sharma accepted the order.",
-        "timestamp": "2026-09-12T08:41:38.288Z",
+        "id": 1793959958903,
+        "text": "Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
+        "timestamp": "2026-11-06T10:12:38.903Z",
         "read": false
       },
       {
-        "id": 1789202425662,
-        "text": "Order #9812 status: Accepted",
-        "timestamp": "2026-09-12T08:40:25.563Z",
+        "id": 1793959958936,
+        "text": "Update on Order #1062: Packed. Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
+        "timestamp": "2026-11-06T10:12:38.847Z",
         "read": false
       },
       {
-        "id": 1789202424730,
-        "text": "Your order 9812 status updated to: Accepted",
-        "timestamp": "2026-09-12T08:40:24.675Z",
+        "id": 1793959946784,
+        "text": "Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
+        "timestamp": "2026-11-06T10:12:26.766Z",
         "read": false
       },
       {
-        "id": 1789202416354,
-        "text": "Order #9812 status: Accepted",
-        "timestamp": "2026-09-12T08:40:16.297Z",
+        "id": 1793959946682,
+        "text": "Update on Order #1062: Packed. Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
+        "timestamp": "2026-11-06T10:12:26.621Z",
         "read": false
       },
       {
-        "id": 1789202415365,
-        "text": "Your order 9812 status updated to: Accepted",
-        "timestamp": "2026-09-12T08:40:15.345Z",
+        "id": 1793959944633,
+        "text": "Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
+        "timestamp": "2026-11-06T10:12:24.553Z",
         "read": false
       },
       {
-        "id": 1789202409444,
-        "text": "Order #9812 status: Accepted",
-        "timestamp": "2026-09-12T08:40:09.347Z",
+        "id": 1793959944501,
+        "text": "Update on Order #1062: Packed. Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
+        "timestamp": "2026-11-06T10:12:24.469Z",
         "read": false
       },
       {
-        "id": 1789202408705,
-        "text": "Your order 9812 status updated to: Accepted",
-        "timestamp": "2026-09-12T08:40:08.702Z",
-        "read": false
-      },
-      {
-        "id": 1789202403549,
+        "id": 1793959942360,
         "text": "Order confirmed and scheduled for workshop preparation",
-        "timestamp": "2026-09-12T08:40:03.528Z",
+        "timestamp": "2026-11-06T10:12:22.295Z",
         "read": false
       },
       {
-        "id": 1789202402927,
-        "text": "Update on Order #9812: Confirmed. Order confirmed and scheduled for workshop preparation",
-        "timestamp": "2026-09-12T08:40:02.865Z",
+        "id": 1793959942339,
+        "text": "Update on Order #1062: Confirmed. Order confirmed and scheduled for workshop preparation",
+        "timestamp": "2026-11-06T10:12:22.240Z",
+        "read": false
+      },
+      {
+        "id": 1793959940651,
+        "text": "Order confirmed and scheduled for workshop preparation",
+        "timestamp": "2026-11-06T10:12:20.630Z",
+        "read": false
+      },
+      {
+        "id": 1793959940610,
+        "text": "Update on Order #1062: Confirmed. Order confirmed and scheduled for workshop preparation",
+        "timestamp": "2026-11-06T10:12:20.534Z",
+        "read": false
+      },
+      {
+        "id": 1793954455742,
+        "text": "Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
+        "timestamp": "2026-11-06T08:40:55.725Z",
+        "read": false
+      },
+      {
+        "id": 1793954455209,
+        "text": "Update on Order #7371: Packed. Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
+        "timestamp": "2026-11-06T08:40:55.172Z",
         "read": false
       }
     ],
@@ -12745,6 +12745,46 @@
         "timestamp": "2026-10-29T12:13:26.691Z",
         "read": false
       }
+    ],
+    "Rocky": [
+      {
+        "id": 1793954459170,
+        "text": "Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
+        "timestamp": "2026-11-06T08:40:59.153Z",
+        "read": false
+      },
+      {
+        "id": 1793954459069,
+        "text": "Update on Order #5578: Packed. Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
+        "timestamp": "2026-11-06T08:40:58.999Z",
+        "read": false
+      },
+      {
+        "id": 1793954453213,
+        "text": "Order confirmed and scheduled for workshop preparation",
+        "timestamp": "2026-11-06T08:40:53.176Z",
+        "read": false
+      },
+      {
+        "id": 1793954453086,
+        "text": "Update on Order #5578: Confirmed. Order confirmed and scheduled for workshop preparation",
+        "timestamp": "2026-11-06T08:40:53.028Z",
+        "read": false
+      }
+    ],
+    "vendor_vendor-cakes": [
+      {
+        "id": 1793960418311,
+        "text": "Order #7443 assigned to your shop for preparation",
+        "timestamp": "2026-11-06T10:20:18.234Z",
+        "read": false
+      },
+      {
+        "id": 1793960417949,
+        "text": "New Order #7443 assigned to you",
+        "timestamp": "2026-11-06T10:20:17.938Z",
+        "read": false
+      }
     ]
   },
   "orders": [
@@ -12813,9 +12853,9 @@
       "customerUsername": "rocky",
       "id": "1062",
       "timestamp": "2026-09-13T07:21:48.035Z",
-      "stage": "pending",
-      "status": "Pending",
-      "statusMessage": "Order received and awaiting admin review",
+      "stage": "delivered",
+      "status": "Delivered",
+      "statusMessage": "Order successfully delivered to recipient",
       "customer": "rocky",
       "area": "Vijay Nagar",
       "assignedAdmin": "",
@@ -12827,7 +12867,8 @@
       "pickupOtp": "5129",
       "deliveryOtp": "7489",
       "logistics": null,
-      "feedback": null
+      "feedback": null,
+      "deliveredAt": "2026-11-06T10:12:44.158Z"
     },
     {
       "cart": [
@@ -12897,9 +12938,9 @@
       "customerUsername": "rocky",
       "id": "7443",
       "timestamp": "2026-09-12T15:07:41.374Z",
-      "stage": "ready_for_pickup",
-      "status": "Ready for Pickup",
-      "statusMessage": "Order packed and ready for pickup at vendor location",
+      "stage": "out_for_delivery",
+      "status": "In Transit",
+      "statusMessage": "Out for delivery via Jr Admin (Indore Hub) (Rider: Jr Admin Rahul (Indore Hub)). Doorstep handover pending Customer Drop OTP.",
       "customer": "rocky",
       "area": "Vijay Nagar",
       "assignedAdmin": "",
@@ -12910,12 +12951,27 @@
       "assignmentAccepted": true,
       "pickupOtp": "4844",
       "deliveryOtp": "2230",
-      "logistics": null,
+      "logistics": {
+        "type": "vendor_self_dispatch",
+        "provider": "Jr Admin (Indore Hub)",
+        "driverName": "Jr Admin Rahul (Indore Hub)",
+        "driverMobile": "+91 98260 11223",
+        "rideBookingId": "",
+        "trackingUrl": "",
+        "pickupOtp": "4844",
+        "dropOtp": "2230",
+        "dispatchedAt": "2026-11-06T11:08:00.480Z",
+        "updatedAt": "2026-11-06T11:08:01.040Z"
+      },
       "feedback": null,
       "confirmedAt": "2026-09-12T15:11:16.210Z",
       "reassignmentNeeded": false,
-      "vendorAssignedAt": "2026-09-12T15:11:29.855Z",
-      "readyAt": "2026-09-12T15:13:40.494Z"
+      "vendorAssignedAt": "2026-11-06T10:24:56.785Z",
+      "readyAt": "2026-11-06T11:07:20.201Z",
+      "shipmentArrangedBy": "admin",
+      "adminPickupRequested": true,
+      "dropOtp": "2230",
+      "dispatchedAt": "2026-11-06T11:08:01.040Z"
     },
     {
       "cart": [
@@ -14237,8 +14293,8 @@
       "id": "7371",
       "timestamp": "2026-09-03T15:10:44.464Z",
       "stage": "pending",
-      "status": "Pending",
-      "statusMessage": "Order received and awaiting admin review",
+      "status": "Packed",
+      "statusMessage": "Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
       "customer": "rocky",
       "area": "Sector 1 - Vashi",
       "assignedAdmin": "",
@@ -14312,8 +14368,8 @@
       "id": "6492",
       "timestamp": "2026-09-03T14:54:45.305Z",
       "stage": "pending",
-      "status": "Pending",
-      "statusMessage": "Order received and awaiting admin review",
+      "status": "Packed",
+      "statusMessage": "Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
       "customer": "admin",
       "area": "Sector 4 - Nerul",
       "assignedAdmin": "",
@@ -14387,8 +14443,8 @@
       "id": "5578",
       "timestamp": "2026-09-03T14:32:31.668Z",
       "stage": "pending",
-      "status": "Pending",
-      "statusMessage": "Order received and awaiting admin review",
+      "status": "Packed",
+      "statusMessage": "Gifts handcrafted, packed in signature luxury box, and ready for dispatch",
       "customer": "Rocky",
       "area": "Sector 1 - Vashi",
       "assignedAdmin": "",
@@ -14759,5 +14815,5 @@
       "registeredAt": "2026-10-29T12:18:32.175Z"
     }
   ],
-  "version": 475
+  "version": 593
 }

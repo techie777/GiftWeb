@@ -1,5 +1,6 @@
 import './globals.css';
 import ScrollToTop from '../components/ScrollToTop';
+import SplashScreen from '../components/SplashScreen';
 
 export const metadata = {
   title: 'GiftPortal Luxe | Premium Luxury Flowers, Cakes & Personalized Gifts',
@@ -115,6 +116,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="bg-[#FAF8F5] text-slate-900 font-sans antialiased selection:bg-rose-100 selection:text-rose-900">
+        <SplashScreen />
         {children}
         <ScrollToTop />
       </body>

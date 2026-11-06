@@ -9,7 +9,6 @@ import ProductPopup from './ProductPopup';
 import Cart from './Cart';
 import AuthModal from './AuthModal';
 import Footer from './Footer';
-import InternationalShipping from './InternationalShipping';
 import AdminPanel from './AdminPanel';
 import VendorOnboardingModal from './VendorOnboardingModal';
 import AddonModal from './AddonModal';
@@ -1640,7 +1639,7 @@ export default function Marketplace() {
                       {/* GORGEOUS FILTER & PERSONALIZATION BOTTOM SHEET DRAWER */}
                       <AnimatePresence>
                         {isFilterDrawerOpen && (
-                          <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/70 backdrop-blur-xs animate-in fade-in duration-200">
+                          <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/60 backdrop-blur-xs animate-in fade-in duration-200">
                             {/* Backdrop */}
                             <div className="absolute inset-0" onClick={() => setIsFilterDrawerOpen(false)} />
 
@@ -1649,191 +1648,372 @@ export default function Marketplace() {
                               initial={{ y: '100%', opacity: 0 }}
                               animate={{ y: 0, opacity: 1 }}
                               exit={{ y: '100%', opacity: 0 }}
-                              transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-                              className="relative z-10 w-full sm:max-w-xl bg-white rounded-t-3xl sm:rounded-3xl p-5 sm:p-6 shadow-2xl space-y-5 max-h-[88vh] overflow-y-auto text-slate-900"
+                              transition={{ type: 'spring', damping: 28, stiffness: 320 }}
+                              className="relative z-10 w-full sm:max-w-2xl bg-white rounded-t-3xl sm:rounded-3xl shadow-2xl flex flex-col max-h-[90vh] text-slate-900 border border-slate-100 overflow-hidden"
                             >
-                              {/* Drag Handle */}
-                              <div className="w-12 h-1.5 bg-slate-300 rounded-full mx-auto sm:hidden -mt-1 mb-2" />
+                              {/* Drag Handle for Mobile */}
+                              <div className="w-12 h-1.5 bg-slate-300 rounded-full mx-auto sm:hidden mt-3 mb-1" />
 
-                              {/* Header */}
-                              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                                <div className="flex items-center gap-2.5">
-                                  <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-rose-600 to-rose-700 text-white flex items-center justify-center shadow-sm">
-                                    <SlidersHorizontal size={16} />
+                              {/* Pinned Header */}
+                              <div className="flex items-center justify-between px-5 sm:px-6 py-4 border-b border-slate-100 bg-white shrink-0">
+                                <div className="flex items-center gap-3">
+                                  <div className="w-10 h-10 rounded-2xl bg-slate-900 text-white flex items-center justify-center shadow-xs shrink-0">
+                                    <SlidersHorizontal size={18} />
                                   </div>
                                   <div>
-                                    <h3 className="font-extrabold text-base text-slate-900">
-                                      Filter &amp; Refine Gifts
-                                    </h3>
-                                    <p className="text-xs text-slate-500">
-                                      Tailor budget, occasion, category &amp; sorting
+                                    <div className="flex items-center gap-2">
+                                      <h3 className="font-extrabold text-base sm:text-lg text-slate-900 leading-tight">
+                                        Filter &amp; Refine Gifts
+                                      </h3>
+                                      <span className="text-[11px] font-bold text-slate-700 bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full">
+                                        {filteredProducts.length} Matches
+                                      </span>
+                                    </div>
+                                    <p className="text-xs text-slate-500 mt-0.5">
+                                      Select budget, occasion, recipient &amp; sorting
                                     </p>
                                   </div>
                                 </div>
 
-                                <div className="flex items-center gap-2">
-                                  <span className="text-[11px] font-black text-rose-800 bg-rose-50 border border-rose-200 px-2.5 py-1 rounded-full">
-                                    {filteredProducts.length} Matches
+                                <button
+                                  type="button"
+                                  onClick={() => setIsFilterDrawerOpen(false)}
+                                  className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 flex items-center justify-center transition-colors cursor-pointer"
+                                  title="Close"
+                                >
+                                  <X size={18} />
+                                </button>
+                              </div>
+
+                              {/* Active Filters Removable Chips (Only shown when any filter is active) */}
+                              {activeFiltersCount > 0 && (
+                                <div className="flex items-center gap-1.5 px-5 sm:px-6 py-2.5 bg-slate-50/90 border-b border-slate-100 overflow-x-auto text-xs shrink-0 no-scrollbar">
+                                  <span className="text-[11px] font-bold text-slate-400 shrink-0 uppercase tracking-wider">
+                                    Active:
                                   </span>
+
+                                  {selectedBudget !== 'all' && (
+                                    <button
+                                      type="button"
+                                      onClick={() => setSelectedBudget('all')}
+                                      className="inline-flex items-center gap-1 px-2.5 py-1 bg-white hover:bg-rose-50 border border-slate-200 hover:border-rose-300 rounded-lg text-xs font-semibold text-slate-700 hover:text-rose-700 transition-colors shrink-0 shadow-2xs"
+                                    >
+                                      <span>💰 {selectedBudget === 'under-500' ? '< ₹500' : selectedBudget === '500-1000' ? '₹500 - ₹1K' : selectedBudget === '1000-2500' ? '₹1K - ₹2.5K' : '> ₹2.5K'}</span>
+                                      <X size={12} />
+                                    </button>
+                                  )}
+
+                                  {activeOccasion !== 'all' && (
+                                    <button
+                                      type="button"
+                                      onClick={() => setActiveOccasion('all')}
+                                      className="inline-flex items-center gap-1 px-2.5 py-1 bg-white hover:bg-rose-50 border border-slate-200 hover:border-rose-300 rounded-lg text-xs font-semibold text-slate-700 hover:text-rose-700 transition-colors shrink-0 shadow-2xs capitalize"
+                                    >
+                                      <span>🎉 {activeOccasion}</span>
+                                      <X size={12} />
+                                    </button>
+                                  )}
+
+                                  {activeRecipient !== 'all' && (
+                                    <button
+                                      type="button"
+                                      onClick={() => setActiveRecipient('all')}
+                                      className="inline-flex items-center gap-1 px-2.5 py-1 bg-white hover:bg-rose-50 border border-slate-200 hover:border-rose-300 rounded-lg text-xs font-semibold text-slate-700 hover:text-rose-700 transition-colors shrink-0 shadow-2xs capitalize"
+                                    >
+                                      <span>👤 {activeRecipient}</span>
+                                      <X size={12} />
+                                    </button>
+                                  )}
+
+                                  {activeCategory !== 'all' && (
+                                    <button
+                                      type="button"
+                                      onClick={() => setActiveCategory('all')}
+                                      className="inline-flex items-center gap-1 px-2.5 py-1 bg-white hover:bg-rose-50 border border-slate-200 hover:border-rose-300 rounded-lg text-xs font-semibold text-slate-700 hover:text-rose-700 transition-colors shrink-0 shadow-2xs capitalize"
+                                    >
+                                      <span>🎁 {activeCategory}</span>
+                                      <X size={12} />
+                                    </button>
+                                  )}
+
+                                  {sortBy !== 'popular' && (
+                                    <button
+                                      type="button"
+                                      onClick={() => setSortBy('popular')}
+                                      className="inline-flex items-center gap-1 px-2.5 py-1 bg-white hover:bg-rose-50 border border-slate-200 hover:border-rose-300 rounded-lg text-xs font-semibold text-slate-700 hover:text-rose-700 transition-colors shrink-0 shadow-2xs"
+                                    >
+                                      <span>⚡ {sortBy}</span>
+                                      <X size={12} />
+                                    </button>
+                                  )}
+
                                   <button
                                     type="button"
-                                    onClick={() => setIsFilterDrawerOpen(false)}
-                                    className="p-1.5 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition-colors cursor-pointer"
+                                    onClick={() => {
+                                      setSelectedBudget('all');
+                                      setActiveOccasion('all');
+                                      setActiveRecipient('all');
+                                      setActiveCategory('all');
+                                      setSortBy('popular');
+                                    }}
+                                    className="text-[11px] font-bold text-rose-700 hover:text-rose-900 underline ml-auto shrink-0 pl-2 cursor-pointer"
                                   >
-                                    <X size={18} />
+                                    Clear all
                                   </button>
                                 </div>
-                              </div>
+                              )}
 
-                              {/* 1. Budget Filter Section */}
-                              <div className="space-y-2">
-                                <label className="text-xs font-black text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
-                                  <span>💰 Budget / Price Range</span>
-                                </label>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                                  {[
-                                    { id: 'all', label: 'All Budgets (Any Price)', emoji: '✨' },
-                                    { id: 'under-500', label: 'Under ₹500 (Budget)', emoji: '🏷️' },
-                                    { id: '500-1000', label: '₹500 - ₹1,000 (Popular)', emoji: '⭐' },
-                                    { id: '1000-2500', label: '₹1,000 - ₹2,500 (Premium)', emoji: '💎' },
-                                    { id: 'above-2500', label: 'Above ₹2,500 (Luxury)', emoji: '👑' }
-                                  ].map((b) => (
-                                    <button
-                                      key={b.id}
-                                      type="button"
-                                      onClick={() => setSelectedBudget(b.id)}
-                                      className={`p-2.5 rounded-xl text-xs font-bold text-left transition-all border flex items-center justify-between cursor-pointer ${
-                                        selectedBudget === b.id
-                                          ? 'bg-amber-500 text-white border-amber-600 shadow-xs'
-                                          : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200/80'
-                                      }`}
-                                    >
-                                      <span className="truncate">{b.emoji} {b.label}</span>
-                                      {selectedBudget === b.id && <Check size={13} className="shrink-0 stroke-[3]" />}
-                                    </button>
-                                  ))}
+                              {/* Scrollable Content Body */}
+                              <div className="flex-1 overflow-y-auto p-5 sm:p-6 space-y-6">
+                                {/* 1. BUDGET FILTER SECTION */}
+                                <div className="space-y-2.5">
+                                  <div className="flex items-center justify-between">
+                                    <label className="text-xs font-black text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                                      <span className="w-5 h-5 rounded-md bg-amber-100 text-amber-800 flex items-center justify-center text-[10px] font-bold">₹</span>
+                                      <span>Budget / Price Range</span>
+                                    </label>
+                                    <span className="text-[11px] text-slate-400 font-medium">5 price tiers</span>
+                                  </div>
+
+                                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                                    {[
+                                      { id: 'all', title: 'All Budgets', subtitle: 'Any Price Range', emoji: '✨' },
+                                      { id: 'under-500', title: 'Under ₹500', subtitle: 'Pocket Friendly', emoji: '🏷️' },
+                                      { id: '500-1000', title: '₹500 – ₹1,000', subtitle: 'Most Popular', emoji: '⭐' },
+                                      { id: '1000-2500', title: '₹1,000 – ₹2,500', subtitle: 'Premium Gifts', emoji: '💎' },
+                                      { id: 'above-2500', title: 'Above ₹2,500', subtitle: 'Luxury Hampers', emoji: '👑' }
+                                    ].map((b) => {
+                                      const isSelected = selectedBudget === b.id;
+                                      return (
+                                        <button
+                                          key={b.id}
+                                          type="button"
+                                          onClick={() => setSelectedBudget(b.id)}
+                                          className={`p-3 rounded-2xl text-left transition-all border flex flex-col justify-between gap-1 cursor-pointer relative ${
+                                            isSelected
+                                              ? 'bg-slate-950 text-white border-slate-950 shadow-md ring-2 ring-slate-900/10'
+                                              : 'bg-slate-50/80 hover:bg-slate-100/80 text-slate-800 border-slate-200/80'
+                                          }`}
+                                        >
+                                          <div className="flex items-center justify-between w-full">
+                                            <span className="text-base">{b.emoji}</span>
+                                            {isSelected && (
+                                              <span className="w-4 h-4 rounded-full bg-white text-slate-950 flex items-center justify-center text-[10px] font-black">
+                                                ✓
+                                              </span>
+                                            )}
+                                          </div>
+                                          <div>
+                                            <div className="font-extrabold text-xs sm:text-sm leading-snug">
+                                              {b.title}
+                                            </div>
+                                            <div className={`text-[10px] font-medium leading-none mt-0.5 ${isSelected ? 'text-slate-300' : 'text-slate-400'}`}>
+                                              {b.subtitle}
+                                            </div>
+                                          </div>
+                                        </button>
+                                      );
+                                    })}
+                                  </div>
+                                </div>
+
+                                {/* 2. RECIPIENT FILTER SECTION (WHO IS THIS FOR?) */}
+                                <div className="space-y-2.5">
+                                  <div className="flex items-center justify-between">
+                                    <label className="text-xs font-black text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                                      <span className="w-5 h-5 rounded-md bg-purple-100 text-purple-800 flex items-center justify-center text-[10px] font-bold">👤</span>
+                                      <span>Who are you gifting for?</span>
+                                    </label>
+                                    <span className="text-[11px] text-slate-400 font-medium">Recipient profile</span>
+                                  </div>
+
+                                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                                    {[
+                                      { id: 'all', title: 'Everyone', subtitle: 'Universal Selections', emoji: '✨' },
+                                      { id: 'her', title: 'For Her', subtitle: 'Wife, GF, Sister', emoji: '👩' },
+                                      { id: 'him', title: 'For Him', subtitle: 'Husband, BF, Brother', emoji: '👨' },
+                                      { id: 'parents', title: 'Parents', subtitle: 'Mom, Dad &amp; Elders', emoji: '🏡' },
+                                      { id: 'couples', title: 'Couples', subtitle: 'Wedding &amp; Romance', emoji: '💑' },
+                                      { id: 'kids', title: 'Kids &amp; Teens', subtitle: 'Plush, Games, Cakes', emoji: '🧸' }
+                                    ].map((r) => {
+                                      const isSelected = activeRecipient === r.id;
+                                      return (
+                                        <button
+                                          key={r.id}
+                                          type="button"
+                                          onClick={() => setActiveRecipient(r.id)}
+                                          className={`p-3 rounded-2xl text-left transition-all border flex flex-col justify-between gap-1 cursor-pointer ${
+                                            isSelected
+                                              ? 'bg-slate-950 text-white border-slate-950 shadow-md ring-2 ring-slate-900/10'
+                                              : 'bg-slate-50/80 hover:bg-slate-100/80 text-slate-800 border-slate-200/80'
+                                          }`}
+                                        >
+                                          <div className="flex items-center justify-between w-full">
+                                            <span className="text-base">{r.emoji}</span>
+                                            {isSelected && (
+                                              <span className="w-4 h-4 rounded-full bg-white text-slate-950 flex items-center justify-center text-[10px] font-black">
+                                                ✓
+                                              </span>
+                                            )}
+                                          </div>
+                                          <div>
+                                            <div className="font-extrabold text-xs sm:text-sm leading-snug">
+                                              {r.title}
+                                            </div>
+                                            <div className={`text-[10px] font-medium leading-none mt-0.5 ${isSelected ? 'text-slate-300' : 'text-slate-400'}`}>
+                                              {r.subtitle}
+                                            </div>
+                                          </div>
+                                        </button>
+                                      );
+                                    })}
+                                  </div>
+                                </div>
+
+                                {/* 3. OCCASION FILTER SECTION */}
+                                <div className="space-y-2.5">
+                                  <div className="flex items-center justify-between">
+                                    <label className="text-xs font-black text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                                      <span className="w-5 h-5 rounded-md bg-rose-100 text-rose-800 flex items-center justify-center text-[10px] font-bold">🎉</span>
+                                      <span>Occasion Celebration</span>
+                                    </label>
+                                    <span className="text-[11px] text-slate-400 font-medium">8 occasions</span>
+                                  </div>
+
+                                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                                    {[
+                                      { id: 'all', label: 'All Occasions', emoji: '🎁' },
+                                      { id: 'birthday', label: 'Birthday', emoji: '🎂' },
+                                      { id: 'anniversary', label: 'Anniversary', emoji: '💍' },
+                                      { id: 'love', label: 'Love & Romance', emoji: '💖' },
+                                      { id: 'congratulations', label: 'Congratulations', emoji: '🎊' },
+                                      { id: 'festive', label: 'Festivals & Puja', emoji: '🪔' },
+                                      { id: 'thank-you', label: 'Thank You', emoji: '🙏' },
+                                      { id: 'get-well', label: 'Get Well Soon', emoji: '🌿' }
+                                    ].map((o) => {
+                                      const isSelected = activeOccasion === o.id;
+                                      return (
+                                        <button
+                                          key={o.id}
+                                          type="button"
+                                          onClick={() => setActiveOccasion(o.id)}
+                                          className={`px-3 py-2.5 rounded-xl text-xs font-bold text-left transition-all border flex items-center justify-between cursor-pointer ${
+                                            isSelected
+                                              ? 'bg-slate-950 text-white border-slate-950 shadow-xs'
+                                              : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200/80'
+                                          }`}
+                                        >
+                                          <span className="truncate">{o.emoji} {o.label}</span>
+                                          {isSelected && <Check size={13} className="shrink-0 stroke-[3]" />}
+                                        </button>
+                                      );
+                                    })}
+                                  </div>
+                                </div>
+
+                                {/* 4. CATEGORY / GIFT TYPE SECTION */}
+                                <div className="space-y-2.5">
+                                  <div className="flex items-center justify-between">
+                                    <label className="text-xs font-black text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                                      <span className="w-5 h-5 rounded-md bg-emerald-100 text-emerald-800 flex items-center justify-center text-[10px] font-bold">🎁</span>
+                                      <span>Gift Category</span>
+                                    </label>
+                                    <span className="text-[11px] text-slate-400 font-medium">8 types</span>
+                                  </div>
+
+                                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                                    {[
+                                      { id: 'all', label: 'All Collections', emoji: '✨' },
+                                      { id: 'flowers', label: 'Fresh Flowers', emoji: '🌸' },
+                                      { id: 'cakes', label: 'Artisan Cakes', emoji: '🎂' },
+                                      { id: 'personalized', label: 'Personalized', emoji: '🖼️' },
+                                      { id: 'hampers', label: 'Luxe Hampers', emoji: '🧺' },
+                                      { id: 'chocolates', label: 'Chocolates', emoji: '🍫' },
+                                      { id: 'plants', label: 'Live Plants', emoji: '🪴' },
+                                      { id: 'toys', label: 'Plush Toys', emoji: '🧸' }
+                                    ].map((c) => {
+                                      const isSelected = activeCategory === c.id;
+                                      return (
+                                        <button
+                                          key={c.id}
+                                          type="button"
+                                          onClick={() => setActiveCategory(c.id)}
+                                          className={`px-3 py-2.5 rounded-xl text-xs font-bold text-left transition-all border flex items-center justify-between cursor-pointer ${
+                                            isSelected
+                                              ? 'bg-slate-950 text-white border-slate-950 shadow-xs'
+                                              : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200/80'
+                                          }`}
+                                        >
+                                          <span className="truncate">{c.emoji} {c.label}</span>
+                                          {isSelected && <Check size={13} className="shrink-0 stroke-[3]" />}
+                                        </button>
+                                      );
+                                    })}
+                                  </div>
+                                </div>
+
+                                {/* 5. SORT BY SECTION */}
+                                <div className="space-y-2.5">
+                                  <div className="flex items-center justify-between">
+                                    <label className="text-xs font-black text-slate-900 uppercase tracking-wider flex items-center gap-2">
+                                      <span className="w-5 h-5 rounded-md bg-blue-100 text-blue-800 flex items-center justify-center text-[10px] font-bold">⚡</span>
+                                      <span>Sort Catalog</span>
+                                    </label>
+                                    <span className="text-[11px] text-slate-400 font-medium">Ranking order</span>
+                                  </div>
+
+                                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                                    {[
+                                      { id: 'popular', label: 'Most Popular & Loved', emoji: '⭐' },
+                                      { id: 'price-asc', label: 'Price: Low to High', emoji: '📈' },
+                                      { id: 'price-desc', label: 'Price: High to Low', emoji: '💎' },
+                                      { id: 'rating', label: 'Highest Rated (4.8+)', emoji: '✨' },
+                                      { id: 'newest', label: 'Newest Arrivals', emoji: '🆕' }
+                                    ].map((s) => {
+                                      const isSelected = sortBy === s.id;
+                                      return (
+                                        <button
+                                          key={s.id}
+                                          type="button"
+                                          onClick={() => setSortBy(s.id)}
+                                          className={`px-3 py-2.5 rounded-xl text-xs font-bold text-left transition-all border flex items-center justify-between cursor-pointer ${
+                                            isSelected
+                                              ? 'bg-slate-950 text-white border-slate-950 shadow-xs'
+                                              : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200/80'
+                                          }`}
+                                        >
+                                          <span className="truncate">{s.emoji} {s.label}</span>
+                                          {isSelected && <Check size={13} className="shrink-0 stroke-[3]" />}
+                                        </button>
+                                      );
+                                    })}
+                                  </div>
                                 </div>
                               </div>
 
-                              {/* 2. Occasion Filter Section */}
-                              <div className="space-y-2">
-                                <label className="text-xs font-black text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
-                                  <span>🎉 Occasion Celebration</span>
-                                </label>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                                  {[
-                                    { id: 'all', label: 'All Occasions', emoji: '🎁' },
-                                    { id: 'birthday', label: 'Birthday Celebrations', emoji: '🎂' },
-                                    { id: 'anniversary', label: 'Anniversary & Romance', emoji: '💍' },
-                                    { id: 'love', label: 'I Love You', emoji: '💖' },
-                                    { id: 'congratulations', label: 'Congratulations', emoji: '🎊' },
-                                    { id: 'festive', label: 'Festive & Blessings', emoji: '🪔' },
-                                    { id: 'thank-you', label: 'Thank You', emoji: '🙏' },
-                                    { id: 'get-well', label: 'Get Well Soon', emoji: '🌿' }
-                                  ].map((o) => (
-                                    <button
-                                      key={o.id}
-                                      type="button"
-                                      onClick={() => setActiveOccasion(o.id)}
-                                      className={`p-2.5 rounded-xl text-xs font-bold text-left transition-all border flex items-center justify-between cursor-pointer ${
-                                        activeOccasion === o.id
-                                          ? 'bg-purple-600 text-white border-purple-700 shadow-xs'
-                                          : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200/80'
-                                      }`}
-                                    >
-                                      <span className="truncate">{o.emoji} {o.label}</span>
-                                      {activeOccasion === o.id && <Check size={13} className="shrink-0 stroke-[3]" />}
-                                    </button>
-                                  ))}
-                                </div>
-                              </div>
-
-                              {/* 3. Gift Type / Category Filter Section */}
-                              <div className="space-y-2">
-                                <label className="text-xs font-black text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
-                                  <span>🎁 Category / Gift Type</span>
-                                </label>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                                  {[
-                                    { id: 'all', label: 'All Gift Types', emoji: '✨' },
-                                    { id: 'flowers', label: 'Flowers & Bouquets', emoji: '🌸' },
-                                    { id: 'cakes', label: 'Cakes & Bakery', emoji: '🎂' },
-                                    { id: 'personalized', label: 'Personalized Keepsakes', emoji: '🖼️' },
-                                    { id: 'hampers', label: 'Gourmet Hampers', emoji: '🧺' },
-                                    { id: 'chocolates', label: 'Artisan Chocolates', emoji: '🍫' },
-                                    { id: 'plants', label: 'Plants & Bonsai', emoji: '🪴' },
-                                    { id: 'toys', label: 'Toys & Plush', emoji: '🧸' }
-                                  ].map((c) => (
-                                    <button
-                                      key={c.id}
-                                      type="button"
-                                      onClick={() => setActiveCategory(c.id)}
-                                      className={`p-2.5 rounded-xl text-xs font-bold text-left transition-all border flex items-center justify-between cursor-pointer ${
-                                        activeCategory === c.id
-                                          ? 'bg-rose-700 text-white border-rose-800 shadow-xs'
-                                          : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200/80'
-                                      }`}
-                                    >
-                                      <span className="truncate">{c.emoji} {c.label}</span>
-                                      {activeCategory === c.id && <Check size={13} className="shrink-0 stroke-[3]" />}
-                                    </button>
-                                  ))}
-                                </div>
-                              </div>
-
-                              {/* 4. Sort By Section */}
-                              <div className="space-y-2">
-                                <label className="text-xs font-black text-slate-800 uppercase tracking-wider flex items-center gap-1.5">
-                                  <span>⚡ Sort Catalog</span>
-                                </label>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                                  {[
-                                    { id: 'popular', label: 'Most Popular & Loved', emoji: '⭐' },
-                                    { id: 'price-asc', label: 'Price: Low to High', emoji: '💰' },
-                                    { id: 'price-desc', label: 'Price: High to Low', emoji: '💎' },
-                                    { id: 'rating', label: 'Highest Rated', emoji: '✨' },
-                                    { id: 'newest', label: 'Newest Arrivals', emoji: '🆕' }
-                                  ].map((s) => (
-                                    <button
-                                      key={s.id}
-                                      type="button"
-                                      onClick={() => setSortBy(s.id)}
-                                      className={`p-2.5 rounded-xl text-xs font-bold text-left transition-all border flex items-center justify-between cursor-pointer ${
-                                        sortBy === s.id
-                                          ? 'bg-slate-900 text-white border-slate-900 shadow-xs'
-                                          : 'bg-slate-50 hover:bg-slate-100 text-slate-700 border-slate-200/80'
-                                      }`}
-                                    >
-                                      <span className="truncate">{s.emoji} {s.label}</span>
-                                      {sortBy === s.id && <Check size={13} className="shrink-0 stroke-[3]" />}
-                                    </button>
-                                  ))}
-                                </div>
-                              </div>
-
-                              {/* Bottom Sticky Action Bar */}
-                              <div className="flex items-center justify-between gap-3 pt-3 border-t border-slate-100 sticky bottom-0 bg-white">
+                              {/* Pinned Bottom Sticky Action Bar */}
+                              <div className="flex items-center justify-between gap-3 px-5 sm:px-6 py-4 border-t border-slate-100 bg-white/95 backdrop-blur-md shrink-0">
                                 <button
                                   type="button"
                                   onClick={() => {
                                     setSelectedBudget('all');
                                     setActiveOccasion('all');
-                                    setActiveCategory('all');
                                     setActiveRecipient('all');
+                                    setActiveCategory('all');
                                     setSearchQuery('');
                                     setSortBy('popular');
                                   }}
-                                  className="text-xs font-bold text-slate-500 hover:text-rose-700 underline cursor-pointer"
+                                  className="text-xs font-bold text-slate-500 hover:text-slate-900 underline cursor-pointer px-2 py-1"
                                 >
                                   Reset All
                                 </button>
                                 <button
                                   type="button"
                                   onClick={() => setIsFilterDrawerOpen(false)}
-                                  className="flex-1 py-3 px-4 bg-gradient-to-r from-rose-600 via-pink-600 to-rose-700 hover:from-rose-500 hover:to-pink-600 text-white rounded-2xl text-xs font-black uppercase tracking-wider shadow-md flex items-center justify-center gap-1.5 cursor-pointer"
+                                  className="flex-1 max-w-sm py-3 px-5 bg-slate-950 hover:bg-black text-white rounded-2xl text-xs font-bold uppercase tracking-wider shadow-lg shadow-slate-900/20 flex items-center justify-center gap-2 cursor-pointer active:scale-98 transition-all"
                                 >
                                   <span>Show {filteredProducts.length} Matching Gifts</span>
-                                  <Check size={15} />
+                                  <ArrowRight size={14} />
                                 </button>
                               </div>
                             </motion.div>
@@ -2053,90 +2233,7 @@ export default function Marketplace() {
                 </section>
               )}
 
-              {/* ===== SHOP BY RECIPIENT TILES (High-Res Images replacing Emojis) ===== */}
-              {!searchQuery && (
-                <section className="px-3.5 sm:px-6 md:px-10 pt-6">
-                  <div className="space-y-3">
-                    <div className="flex items-center gap-2">
-                      <Heart size={16} className="text-rose-600" />
-                      <h2 className="font-serif font-bold text-lg sm:text-xl text-slate-900">Who are you gifting for?</h2>
-                      <span className="text-xs text-slate-400 font-medium hidden sm:inline">Thoughtful selections tailored for everyone</span>
-                    </div>
-                    <div className="grid grid-cols-5 gap-2 sm:gap-3.5">
-                      {[
-                        { 
-                          id: 'her', 
-                          label: 'For Her', 
-                          sub: 'Gourmet chocolates & flowers',
-                          image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=500&auto=format&fit=crop'
-                        },
-                        { 
-                          id: 'him', 
-                          label: 'For Him', 
-                          sub: 'Watches, gadgets & grooming',
-                          image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=500&auto=format&fit=crop'
-                        },
-                        { 
-                          id: 'couples', 
-                          label: 'Couples', 
-                          sub: 'Keepsakes & romantic treats',
-                          image: 'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500&auto=format&fit=crop'
-                        },
-                        { 
-                          id: 'parents', 
-                          label: 'Parents', 
-                          sub: 'Health hampers & blessings',
-                          image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop'
-                        },
-                        { 
-                          id: 'kids', 
-                          label: 'Kids', 
-                          sub: 'Plush toys & sweets',
-                          image: 'https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?w=500&auto=format&fit=crop'
-                        },
-                      ].map((rec) => {
-                        const isSelected = activeRecipient === rec.id;
-                        return (
-                          <motion.button
-                            key={rec.id}
-                            whileHover={{ y: -3, scale: 1.02 }}
-                            whileTap={{ scale: 0.96 }}
-                            onClick={() => {
-                              setActiveRecipient(isSelected ? 'all' : rec.id);
-                              shopRef.current?.querySelector('#product-grid')?.scrollIntoView({ behavior: 'smooth' });
-                            }}
-                            className={`group rounded-xl sm:rounded-2xl border transition-all duration-300 overflow-hidden cursor-pointer flex flex-col text-left ${
-                              isSelected
-                                ? 'border-rose-600 bg-rose-50/80 shadow-md ring-2 ring-rose-500/20'
-                                : 'border-rose-100/80 bg-white hover:border-rose-300 hover:shadow-md'
-                            }`}
-                          >
-                            <div className="relative aspect-square w-full overflow-hidden bg-rose-50">
-                              <img
-                                src={rec.image}
-                                alt={rec.label}
-                                className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
-                                loading="lazy"
-                              />
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                            </div>
-                            <div className="p-1.5 sm:p-2.5 text-center">
-                              <span className={`text-[10px] sm:text-xs font-black tracking-tight block ${
-                                isSelected ? 'text-rose-900 font-extrabold' : 'text-slate-800'
-                              }`}>
-                                {rec.label}
-                              </span>
-                              <span className="text-[8px] sm:text-[9px] text-slate-500 font-medium hidden sm:block">
-                                {rec.sub}
-                              </span>
-                            </div>
-                          </motion.button>
-                        );
-                      })}
-                    </div>
-                  </div>
-                </section>
-              )}
+
 
               {/* Newsletter / VIP Club Banner */}
               {activeCategory === 'all' && !searchQuery && (
@@ -3001,53 +3098,7 @@ export default function Marketplace() {
         </main>
       </div>
 
-      {/* ===== CUSTOMER REVIEWS — above the footer ===== */}
-      <section className="bg-[#FAF8F5] border-t border-rose-100/60 px-4 sm:px-8 md:px-12 py-10 sm:py-14">
-        <div className="max-w-6xl mx-auto space-y-6">
-          <div className="flex items-center gap-3">
-            <Star size={18} className="text-amber-500 fill-amber-500" />
-            <h2 className="font-serif font-bold text-xl sm:text-2xl text-slate-900">What Our Customers Say</h2>
-            <span className="text-[10px] font-bold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-200 ml-1">⭐ 4.9/5.0 Average</span>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {[
-              { name: 'Priya M.', city: 'Mumbai', rating: 5, text: 'The roses arrived perfectly fresh at midnight — my husband was in tears! The packaging was absolutely luxurious. Will order again!', tag: 'Midnight Surprise', emoji: '🌹' },
-              { name: 'Rahul K.', city: 'Delhi', rating: 5, text: "Ordered 2 hours before my girlfriend's birthday and it reached in 90 mins. Quality is premium, easily beats any local florist.", tag: 'Express 2-Hour', emoji: '⚡' },
-              { name: 'Sneha T.', city: 'Bangalore', rating: 5, text: "The hamper I ordered for my parents' anniversary was beautifully packed. They were overjoyed. The personal card message was printed perfectly!", tag: 'Gourmet Hamper', emoji: '🧺' },
-            ].map((review, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.07 }}
-                className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 border border-rose-100 shadow-sm space-y-3 hover:shadow-md transition-shadow"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-0.5">
-                    {[...Array(review.rating)].map((_, j) => (
-                      <Star key={j} size={13} className="fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <span className="text-[9px] font-bold text-rose-700 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-100">
-                    {review.emoji} {review.tag}
-                  </span>
-                </div>
-                <p className="text-sm text-slate-700 leading-relaxed italic">&ldquo;{review.text}&rdquo;</p>
-                <div className="flex items-center gap-2.5 pt-2 border-t border-rose-50">
-                  <div className="w-8 h-8 rounded-full bg-gradient-to-br from-rose-200 to-rose-300 flex items-center justify-center text-rose-900 font-extrabold text-sm shrink-0">
-                    {review.name[0]}
-                  </div>
-                  <div>
-                    <p className="text-xs font-bold text-slate-900">{review.name}</p>
-                    <p className="text-[10px] text-slate-500 font-medium">{review.city} · Verified Purchase</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* ===== PLATFORM TRUST STATS RIBBON (Above Footer) ===== */}
       <section className="bg-white border-y border-rose-100/80 py-6 sm:py-8 shadow-2xs">
@@ -3073,8 +3124,7 @@ export default function Marketplace() {
         </div>
       </section>
 
-      {/* International Worldwide Shipping Section (Above Footer) */}
-      <InternationalShipping />
+
 
       {/* Master Single Footer - 100% Full Width across entire screen */}
       <Footer onOpenVendorOnboarding={() => setShowVendorOnboarding(true)} />
